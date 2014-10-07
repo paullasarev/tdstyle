@@ -1,7 +1,8 @@
 var webdriverio = require('webdriverio');
 var options = {
     desiredCapabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
+        singleton: true
     }
 };
 webdriverio

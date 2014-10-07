@@ -1,0 +1,30 @@
+{
+  "name": "tdstyle",
+  "version": "0.0.0",
+  "homepage": "https://github.com/paullasarev/tdstyle",
+  "authors": [
+    "paullasarev <paullasarev@gmail.com>"
+  ],
+  "description": "CSS TDD",
+  "main": "index.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "css",
+    "tdd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chai": "~1.9.2",
+    "mocha": "~1.21.4",
+    "WebConsole": "*"
+  }
+}
