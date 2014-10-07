@@ -1,0 +1,24 @@
+{
+  "name": "tdstyle",
+  "version": "1.0.0",
+  "description": "CSS TDD framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "preinstall": "npm list selenium-standalone -g --depth=0 || npm install -g selenium-standalone",
+    "selenium": "start-selenium"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paullasarev/tdstyle.git"
+  },
+  "keywords": [
+    "css",
+    "tdd"
+  ],
+  "author": "paullasarev@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "webdriverio": "^2.2.3"
+  }
+}
