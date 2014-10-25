@@ -2,7 +2,7 @@
   "name": "tdstyle",
   "version": "1.0.0",
   "description": "CSS TDD framework",
-  "main": "index.js",
+  "main": "tdstyle.js",
   "scripts": {
     "test": "mocha",
     "selenium": "start-selenium"
@@ -18,5 +18,13 @@
   "author": "paullasarev@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "mocha": "^2.0.1",
+    "karma-mocha": "^0.1.9",
+    "karma": "^0.12.24",
+    "karma-html2js-preprocessor": "^0.1.0"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-phantomjs-launcher": "^0.1.4"
   }
 }

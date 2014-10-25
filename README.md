@@ -1,4 +1,4 @@
 tdstyle
 =======
 
-CSS TDD framework
+CSS TDD library
