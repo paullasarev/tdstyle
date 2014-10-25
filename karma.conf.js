@@ -18,7 +18,8 @@ module.exports = function(config) {
       {pattern: './bower_components/jquery/dist/jquery.js', watched:false, included:true, served:true},
       {pattern: './bower_components/tinycolor/tinycolor.js', watched:false, included:true, served:true},
       {pattern:'./tdstyle.js', watched:true, included:true, served:true},
-      './test/**/*.js',
+      //'./test/**/*.js',
+      './test/horizontal-center/*.js',
       './test/**/*.html',
       {pattern:'./test/**/*.css', watched:true, included:false, served:true},
     ],
@@ -77,7 +78,8 @@ module.exports = function(config) {
       // },
 
       // grep 'test/suite names against this value'
-      args: ['--grep', 'vertical-center'],
+      //args: ['--grep', 'vertical-center'],
+      args: ['--grep', 'horizontal-center'],
     },
   });
 };

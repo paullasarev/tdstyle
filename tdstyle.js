@@ -549,6 +549,15 @@
         done();
     },
 
+    isThrows: function(func) {
+      try {
+        func();
+        throw new Error('not thrown');  
+      } catch(err) {
+        console.log('thrown' + err);
+      }
+    },
+
   };
 
   window.tdstyle = module;

@@ -5,7 +5,7 @@
   "main": "tdstyle.js",
   "scripts": {
     "test": "mocha",
-    "selenium": "start-selenium"
+    "karma": "karma start"
   },
   "repository": {
     "type": "git",

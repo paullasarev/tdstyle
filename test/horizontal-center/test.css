@@ -1,0 +1,14 @@
+.container {
+  width: 200px;
+}
+
+.not-centered-block {
+  width: 100px;
+}
+
+.centered-block {
+  width: 80px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
