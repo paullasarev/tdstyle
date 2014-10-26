@@ -19,7 +19,8 @@ module.exports = function(config) {
       {pattern: './bower_components/tinycolor/tinycolor.js', watched:false, included:true, served:true},
       {pattern:'./tdstyle.js', watched:true, included:true, served:true},
       //'./test/**/*.js',
-      './test/horizontal-center/*.js',
+      './test/vertical-center/*.js',
+      // './test/horizontal-center/*.js',
       './test/**/*.html',
       {pattern:'./test/**/*.css', watched:true, included:false, served:true},
     ],
@@ -40,7 +41,8 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    //reporters: ['progress'],
+    reporters: ['dots'],
 
 
     // web server port
@@ -64,7 +66,7 @@ module.exports = function(config) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     //browsers: ['Chrome'],
     //browsers: ['PhantomJS'],
-    browsers: ['Chrome', 'PhantomJS'],
+    browsers: ['Chrome', 'Safari', 'PhantomJS'],
 
 
     // Continuous Integration mode
@@ -79,7 +81,7 @@ module.exports = function(config) {
 
       // grep 'test/suite names against this value'
       //args: ['--grep', 'vertical-center'],
-      args: ['--grep', 'horizontal-center'],
+      //args: ['--grep', 'horizontal-center'],
     },
   });
 };

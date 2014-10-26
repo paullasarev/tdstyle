@@ -333,8 +333,9 @@
 
     isTextCentered: function (elementSelector) {
       var textAlign = $(elementSelector).css("text-align");
-
-      return textAlign === "center";
+      if (textAlign !== "center")
+        throw new Error(_formatRequired("text is not centered", textAlign, 'center'));
+      return true;
     },
 
     isContentOnly: function (selector) {
@@ -342,7 +343,9 @@
       var margin = _pixelsToInt(el.css('margin'));
       var padding = _pixelsToInt(el.css('padding'));
       var border = _pixelsToInt(el.css('border'));
-      return margin === 0 && padding === 0 && border===0;
+      if (margin === 0 && padding === 0 && border===0)
+        return true;
+      throw new Error(_formatRequired("content only: margin/padding/border", ""+margin+"/"+padding+"/"+border, "0/0/0"));
     },
 
     getText: function(selector) {
@@ -550,12 +553,16 @@
     },
 
     isThrows: function(func) {
+      var thrown = true;
       try {
         func();
-        throw new Error('not thrown');  
+        thrown = false;
       } catch(err) {
-        console.log('thrown' + err);
       }
+
+      if (!thrown)
+        throw new Error('not thrown but should');  
+      return true;
     },
 
   };

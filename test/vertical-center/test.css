@@ -1,4 +1,62 @@
-.block  {
+.cont1 {
   height: 100px;
+  width: 300px;
+  background-color: #e0e0e0;  
+
   line-height: 100px;
 }
+
+.block-with-text  {
+}
+
+.cont2 {
+  height: 100px;
+  width: 300px;
+  background-color: #e0e0e0;
+  position:relative;
+}
+
+.cont2__block {
+  height: 50px;
+  width: 200px;
+  background-color: #92c1e2;
+  margin: auto 0;
+  top: 0;
+  bottom: 0;
+  position:absolute;
+}
+
+
+.cont3 {
+  height: 100px;
+  width: 300px;
+  background-color: #e0e0e0;
+  position: relative;
+}
+
+.cont3__block {
+  height: 50px;
+  width: 200px;
+  background-color: #92c1e2;
+  position: absolute;
+  margin: -25px 0 0 0; /*should be half of height*/
+  top: 50%;
+}
+
+.cont4 {
+  height: 100px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+
+.cont4__block {
+  height: 60%;
+  width: 200px;
+  background-color: #92c1e2;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
