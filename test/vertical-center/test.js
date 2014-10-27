@@ -21,4 +21,7 @@ describe("vertical-center", function(){
      tdstyle.isVerticallyCentered('.cont4', '.cont4__block');
   });
 
+  it('block should be v&h centered', function () {
+     tdstyle.isCentered('.cont5', '.cont5__block');
+  });
 });
