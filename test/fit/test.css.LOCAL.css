@@ -1,0 +1,93 @@
+.cont1 {
+  height: 150px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+
+  .cont1__block {
+    height: 50px;
+    width: 200px;
+    background-color: #92c1e2;
+  }
+
+  .cont1__block2 {
+    height: 50px;
+    width: 200px;
+    background-color: #7ba4c1;
+  }
+
+.cont2 {
+  height: 150px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+
+  .cont2__block {
+    height: 50px;
+    width: 300px;
+    background-color: #92c1e2;
+  }
+
+  .cont2__block2 {
+    height: 50px;
+    width: 100px;
+    background-color: #7ba4c1;
+  }
+
+.cont3 {
+  height: 50px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+
+  .cont3__block {
+    height: 50px;
+    width: 300px;
+    background-color: #92c1e2;
+  }
+
+.cont4 {
+  height: 100px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+  .cont4__block {
+    height: 50px;
+    width: 100px;
+    background-color: #7ba4c1;
+  }
+
+.cont5 {
+  height: 150px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+  .cont5__block {
+    height: 50px;
+    width: 300px;
+    background-color: #92c1e2;
+  }
+  .cont5__block2 {
+    height: 50px;
+    width: 100px;
+    background-color: #7ba4c1;
+  }
+
+.cont6 {
+  height: 150px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+  .cont6__block {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    background-color: #92c1e2;
+  }
+  .cont6__block2 {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    background-color: #7ba4c1;
+    margin-left: -4px;
+  }
