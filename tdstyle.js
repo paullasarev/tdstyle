@@ -68,6 +68,111 @@
     return value;
   };
 
+  var _getBaseSelector = function(selector) {
+    var pos = selector.search(":");
+    if (pos < 0)
+      return selector;
+
+    return selector.substring(0, pos);
+  };
+
+  function _isTransparentColor(color)
+  {
+    return !color || color==='transparent' || color==='#000000' || color==='rgba(0, 0, 0, 0)';
+  }
+
+  function _elGetColor(el, colorProperty) {
+    var color = _tinycolor(el.css(colorProperty)).toHexString();
+    if (!_isTransparentColor(color))
+      return color;
+    return "";
+  }
+
+  function _getColor(selector, colorProperty) {
+    var el = _getCssAccessor(selector);
+
+    var color = _elGetColor(el, colorProperty);
+    if (color)
+      return color;
+
+    var sel = _getBaseSelector(selector);
+    if (sel != selector) {
+      el = $(sel);
+      color = _elGetColor(el, colorProperty);
+      if (color)
+        return color;
+    }
+
+    var parents = el.parents();
+
+    for(var i = 0 ; i <parents.length ; i++) {
+      var el = parents.eq(i);
+      color = _elGetColor(el, colorProperty);
+      if (color)
+        return color;
+    }
+
+    return '#fff';
+  }
+
+  function _getInheritProperty(selector, propName)
+  {
+    var el = _getCssAccessor(selector);
+
+    var value = el.css(propName);
+    if (!value)
+      return "";
+    if (value.toLowerCase() !== "inherit")
+      return value;
+
+    var sel = _getBaseSelector(selector);
+    if (sel != selector) {
+      el = $(sel);
+
+      value = el.css(propName);
+      if (!value)
+        return "";
+      if (value.toLowerCase() !== "inherit")
+        return value;
+    }
+
+    var parents = el.parents();
+
+    for(var i = 0 ; i <parents.length ; i++) {
+      el = parents.eq(i);
+
+      value = el.css(propName);
+      if (!value)
+        return "";
+      if (value.toLowerCase() !== "inherit")
+        return value;
+    }
+
+    return "";
+  }
+
+  function _isOutline(selector, required) {
+    var pos = selector.search(":");
+    if (pos < 0)
+      selector += ":";
+    var outline = _parseBorder(required);
+    var value;
+    if (outline.style) {
+      value = _getInheritProperty(selector, "outline-style");
+      _compareValues(outline.style, value, "outline-style");
+    }
+    if (outline.width) {
+      value = _getInheritProperty(selector, "outline-width");
+      _compareValues(outline.width, value, "outline-width");
+    }
+    if (outline.color) {
+      value = _getInheritProperty(selector, "outline-color");
+      _compareValues(outline.color, value, "outline-color");
+    }
+
+    return true;
+  }
+
   var _parseBorder = function(border) {
     var result = {};
     var parts = border.split(' ');
@@ -144,6 +249,8 @@
 
     var sel = selector.substring(0, pos);
     var pseudo = selector.substring(pos);
+    if (pseudo === ':')
+      return _findStyleSheet(sel);
 
     var hints = _cssHints[pseudo]; 
     if (hints) {
@@ -469,8 +576,7 @@
     },
 
     isColor: function(selector, colorProperty, value) {
-      var el = _getCssAccessor(selector);
-      var color = el.css(colorProperty);
+      var color = _getColor(selector, colorProperty);
       _compareColor(value, color, colorProperty);
       return true;
     },
@@ -521,9 +627,8 @@
           _checkBoxBorder(el, box[_camelCase(prefix)], prefix);
       });
 
-      if (box.color) {
-        _compareColor(box.color, el.css("background-color"), "color");
-      }
+      if (box.color)
+        _compareColor(box.color, _getColor(selector, "background-color"), "background-color");
 
       if (box.width)
         this.isWidth(selector, box.width);
@@ -533,6 +638,9 @@
 
       if (box.sizing)
         _compareValues(box.sizing, el.css('box-sizing'), 'box-sizing');
+
+      if (box.outline)
+        _isOutline(selector, box.outline);
 
       return true;
     },
