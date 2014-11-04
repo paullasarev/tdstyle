@@ -379,6 +379,17 @@
       return true;
     },
 
+    isOnBottom: function (frameSelector, elementSelector) {
+      var frameRect=this.getOffsetRect(frameSelector);
+      var elementRect=this.getOffsetRect(elementSelector);
+
+      if (elementRect.bottom != frameRect.bottom)
+        throw new Error(_formatRequired(_format("bottom '{0}' in '{1}'", elementSelector, frameSelector)
+         , elementRect.bottom, frameRect.bottom));
+
+      return true;
+    },
+
     isOnRight: function (frameSelector, elementSelector) {
       var frameRect=this.getOffsetRect(frameSelector);
       var elementRect=this.getOffsetRect(elementSelector);
@@ -387,6 +398,40 @@
         throw new Error(_formatRequired(_format(" '{0}' is on right of  '{1}'", elementSelector, frameSelector)
          , elementRect.left, frameRect.right));
 
+      return true;
+    },
+
+    areInRaw: function() {
+      var top, bottom;
+      for (var i = 0 ; i < arguments.length ; ++i) {
+        var elRect = this.getOffsetRect(arguments[i]);
+        if (!top && !bottom) {
+          top = elRect.top;
+          bottom = elRect.bottom;
+        } else {
+          if (elRect.top != top || elRect.bottom != bottom)
+            throw new Error(_formatRequired(_format("wrong '{0}' block", arguments[i])
+             , String(elRect.top) + "/" + String(elRect.bottom)
+             , String(top) + "/" + String(bottom)));
+        }
+      }
+      return true;
+    },
+
+    areInCol: function() {
+      var left, right;
+      for (var i = 0 ; i < arguments.length ; ++i) {
+        var elRect = this.getOffsetRect(arguments[i]);
+        if (!left && !right) {
+          left = elRect.left;
+          right = elRect.right;
+        } else {
+          if (elRect.left != left || elRect.right != right)
+            throw new Error(_formatRequired(_format("wrong '{0}' block", arguments[i])
+             , String(elRect.left) + "/" + String(elRect.right)
+             , String(left) + "/" + String(right)));
+        }
+      }
       return true;
     },
 

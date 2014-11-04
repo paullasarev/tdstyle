@@ -73,7 +73,36 @@ describe("fit", function(){
 
   it('should fail if not isOnRight', function(){
     tdstyle.isThrows(function(){
-      tdstyle.isOnRight('.cont7', '.cont7__block');
+      tdstyle.isEndOnRight('.cont7', '.cont7__block');
+    });
+  });
+
+  it('should be on bottom', function(){
+      tdstyle.isOnBottom('.cont8', '.cont8__block2');
+  });
+
+  it('non-bottom block should fail isOnBottom', function(){
+    tdstyle.isThrows(function(){
+      tdstyle.isOnBottom('.cont8', '.cont8__block');
+    });
+  });
+  it('should be areInRaw', function(){
+      tdstyle.areInRaw('.cont9__block2','.cont9__block3','.cont9__block4');
+  });
+
+  it('non-raw block should fail areInRaw', function(){
+    tdstyle.isThrows(function(){
+      tdstyle.areInRaw('.cont9__block', '.cont9__block2');
+    });
+  });
+
+  it('should be areInCol', function(){
+      tdstyle.areInCol('.cont10__block2','.cont10__block3','.cont10__block4');
+  });
+
+  it('non-raw block should fail areInCol', function(){
+    tdstyle.isThrows(function(){
+      tdstyle.areInCol('.cont10__block', '.cont10__block2');
     });
   });
 });
