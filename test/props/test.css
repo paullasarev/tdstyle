@@ -1,0 +1,36 @@
+.cont1 {
+  height: 50px;
+  width: 300px;
+  background-color: #e0e0e0;
+}
+
+  .cont1__block {
+    height: 50px;
+    width: 200px;
+  }
+
+.cont2 {
+  height: 100px;
+  width: 300px;
+  background-color: #e0e0e0;
+
+  font-size: 70px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  color: #9acc93;
+}
+
+.cont3 {
+  height: 100px;
+  width: 300px;
+  background-color: #ddd;
+  padding: 0 20px 0 10px;
+  margin: 10px 15px 5px 2px;
+  border: 5px solid red;
+  box-sizing: border-box;
+  outline-style: none;
+  moz-outline-style: none;
+}
+
