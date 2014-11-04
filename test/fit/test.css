@@ -74,7 +74,7 @@
   }
 
 .cont6 {
-  height: 150px;
+  height: 100px;
   width: 300px;
   background-color: #e0e0e0;
 }
@@ -90,4 +90,24 @@
     width: 100px;
     background-color: #7ba4c1;
     margin-left: -4px;
+  }
+
+.cont7 {
+  height: 100px;
+  width: 300px;
+  background-color: #e0e0e0;
+  position: relative;
+}
+  .cont7__block {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    background-color: #92c1e2;
+  }
+  .cont7__block2 {
+    display: inline-block;
+    float:right;
+    height: 50px;
+    width: 100px;
+    background-color: #7ba4c1;
   }

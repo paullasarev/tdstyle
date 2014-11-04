@@ -292,15 +292,13 @@
 
   function _karmaLoadCss(path, done) {
     path = 'base/' + path;
-    $('link').remove();
+    $('style').remove();
 
-    $("<link/>", {
-     rel: "stylesheet",
+    $("<style/>", {
      type: "text/css",
-      href: path,
     }).appendTo("head");
 
-    $('link').load(path, function(){
+    $('style').load(path, function(){
       done();
     });
   }
@@ -399,6 +397,17 @@
       if (elementRect.left != frameRect.left)
         throw new Error(_formatRequired(_format(" '{0}' is start on left '{1}'", elementSelector, frameSelector)
          , elementRect.left, frameRect.left));
+
+      return true;
+    },
+
+    isEndOnRight: function (frameSelector, elementSelector) {
+      var frameRect=this.getOffsetRect(frameSelector);
+      var elementRect=this.getOffsetRect(elementSelector);
+
+      if (elementRect.right != frameRect.right)
+        throw new Error(_formatRequired(_format(" '{0}' is end on right '{1}'", elementSelector, frameSelector)
+         , elementRect.right, frameRect.right));
 
       return true;
     },

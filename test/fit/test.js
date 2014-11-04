@@ -66,4 +66,14 @@ describe("fit", function(){
       tdstyle.isOnRight('.cont6__block2', '.cont6__block');
     });
   });
+
+  it('should isEndOnRight', function(){
+      tdstyle.isEndOnRight('.cont7', '.cont7__block2');
+  });
+
+  it('should fail if not isOnRight', function(){
+    tdstyle.isThrows(function(){
+      tdstyle.isOnRight('.cont7', '.cont7__block');
+    });
+  });
 });
