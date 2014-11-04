@@ -1,6 +1,6 @@
 {
   "name": "tdstyle",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/paullasarev/tdstyle",
   "authors": [
     "paullasarev <paullasarev@gmail.com>"
@@ -23,10 +23,11 @@
     "tests"
   ],
   "dependencies": {
-    "chai": "~1.9.2",
-    "mocha": "~1.21.4",
-    "WebConsole": "*",
-    "jquery": "~2.1.1",
-    "tinycolor": "~1.1.0"
+    "jquery": "*"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*",
+    "WebConsole": "*"
   }
 }
