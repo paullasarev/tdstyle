@@ -472,6 +472,10 @@
     var id = 'karma-fixture-div';
     var idSel = '#' + id;
     var idDiv = '<div id="' + id + '"></div>';
+    var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+    var body = pattern.exec(fixture);
+    if (body)
+      fixture = body[1];
 
     if (!$(idSel).length)
       $('body').append(idDiv);

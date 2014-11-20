@@ -23,7 +23,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "*"
+    "jquery": "*",
+    "assert": "~0.1.0"
   },
   "devDependencies": {
     "chai": "*",

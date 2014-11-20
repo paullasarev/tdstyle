@@ -23,13 +23,14 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       {pattern: './bower_components/jquery/dist/jquery.js', watched:false, included:true, served:true},
-      {pattern: './bower_components/tinycolor/tinycolor.js', watched:false, included:true, served:true},
+      {pattern: './bower_components/assert/assert.js', watched:false, included:true, served:true},
       {pattern:'./tdstyle.js', watched:true, included:true, served:true},
       // './test/**/*.js',
       //'./test/vertical-center/*.js',
       // './test/horizontal-center/*.js',
       // './test/fit/*.js',
-      './test/props/*.js',
+      // './test/props/*.js',
+      './test/html/*.js',
       './test/**/*.html',
       {pattern:'./test/**/*.css', watched:true, included:false, served:true},
     ],
