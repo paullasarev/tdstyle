@@ -883,7 +883,7 @@
 
       ['border', 'border-top', 'border-right', 'border-bottom', 'border-left']
       .forEach(function(prefix) {
-        if (prefix==='border') { //Firefox cannot get just border
+        if (prefix==='border' && box[prefix]) { //Firefox cannot get just border
           _checkBoxBorder(el, box[prefix], 'border-top');
           _checkBoxBorder(el, box[prefix], 'border-right');
           _checkBoxBorder(el, box[prefix], 'border-bottom');

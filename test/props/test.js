@@ -72,6 +72,12 @@ describe("props", function(){
     });
   });
 
+  it('isBox should check color', function(){
+    tdstyle.isBox('.cont2', {
+        color: '#e0e0e0',
+    });
+  });
+
   it('isBox should check box', function(){
     tdstyle.isBox('.cont3', {
         paddingLeft: 10,
@@ -80,7 +86,7 @@ describe("props", function(){
         marginRight: 15,
         marginBottom: 5,
         marginLeft: 2,
-        border: "solid 5x red",
+        border: "solid 5px red",
         color: '#ddd',
         sizing: "border-box",
         outline: "none",
