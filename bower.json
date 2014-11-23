@@ -1,6 +1,6 @@
 {
   "name": "tdstyle",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "https://github.com/paullasarev/tdstyle",
   "authors": [
     "paullasarev <paullasarev@gmail.com>"
@@ -18,7 +18,7 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
+    "bower_components"
   ],
   "dependencies": {
     "jquery": "*",
